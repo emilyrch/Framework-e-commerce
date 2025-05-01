@@ -5,5 +5,6 @@
 
 🌀 Galeria 
 
-![image](https://github.com/user-attachments/assets/2d8bdcc3-6089-48ee-b56a-1b32323bc69c)
+![image](https://github.com/user-attachments/assets/2d8bdcc3-6089-48ee-b56a-1b32323bc69c) 
+figura commit 2 
 
