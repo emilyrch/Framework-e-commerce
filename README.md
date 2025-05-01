@@ -3,7 +3,7 @@
 apenas para saber o que está sendo implementado 😊
 ⚠️ mais detalhado que o commit ⚠️
 
-quem for dando commit, por favor completar esse read.me para ficar mais fácil estruturar a documentação final. 
+quem for dando commit, por favor completar esse read.me para ficar mais fácil estruturar a documentação final (evite descrever no commit, como tá fazendo esse relatorio, so coloca uma identificação e colocar ela aqui e ai sim escrever o commit, vai ficar mais organizado)
 
 🌀 COMMIT 2 - XXXXX
 
