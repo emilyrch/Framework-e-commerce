@@ -1,6 +1,6 @@
 # Mapa 🌐
 
---> especificações de cada commit e implementações estão em Issues (melhor forma de organizar por aqui) , isso vai ajudar na hora de fazer a documentação
+--> especificações de cada commit e implementações estão em Issues (melhor forma de organizar por aqui) , isso vai ajudar na hora de fazer a documentação \n
 --> implementações GUI e Diagramas por favor colocar aqui no mapa (em ordem cronologica de preferência)
 
 🌀 Galeria 
