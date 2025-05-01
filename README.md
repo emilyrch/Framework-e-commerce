@@ -7,6 +7,9 @@ quem for dando commit, por favor completar esse read.me para ficar mais fácil e
 
 🌀 COMMIT 2 - EDGAR
 
+![image](https://github.com/user-attachments/assets/2d8bdcc3-6089-48ee-b56a-1b32323bc69c)
+
+
 📌 Objetivo
 
 este commit visa a criação do primeiro módulo reutilizável dentro do framework, chamado catalog-module. Esse módulo será responsável por fornecer os dados de produtos para as lojas de e-commerce (como a store-ropa). Ele é essencial porque forma a base da estrutura do framework, permitindo que, no futuro, você adicione mais funcionalidades (como carrinho, pagamento, etc.) sem precisar reescrever o código.
