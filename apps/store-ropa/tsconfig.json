@@ -3,7 +3,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@packages/*": ["../../packages/*"]
+      "@packages/*": ["../../packages/*"],
+      "catalog-module/*": ["../../packages/catalog-module/*"],
+      "cart-module/*": ["../../packages/cart-module/*"],
+      "product-module": ["../../packages/product-module"],
+
     },
     "target": "ES2017",
     "lib": [
@@ -33,7 +37,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "next.config.js"  ],
   "exclude": [
     "node_modules"
   ]
