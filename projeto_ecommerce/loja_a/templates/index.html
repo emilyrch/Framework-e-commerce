@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja A - Catálogo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .cart-icon {
+            font-size: 30px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: #2c3e50;
+            cursor: pointer;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .cart-icon:hover {
+            background-color: #bdc3c7;
+        }
+
+        .products, .recommendations {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.2s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #34495e;
+        }
+
+        .product p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #27ae60;
+        }
+
+        .product a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #2980b9;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .product a:hover {
+            background-color: #1c5980;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Catálogo de Produtos</h1>
+
+    <!-- Ícone do carrinho -->
+    <a href="{{ url_for('view_cart') }}">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+    </a>
+
+    <div class="products">
+        {% for product in products %}
+            <div class="product">
+                <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>Preço: R$ {{ "%.2f"|format(product.price) }}</p>
+                <a href="{{ url_for('add_to_cart', product_id=product.id) }}">Adicionar ao Carrinho</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2>Recomendações</h2>
+    <div class="recommendations">
+        {% for product in recommendations %}
+            <div class="product">
+                <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>Preço: R$ {{ "%.2f"|format(product.price) }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

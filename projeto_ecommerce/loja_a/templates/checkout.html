@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Checkout</title></head>
+<body>
+    <h1>Finalizar Compra</h1>
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+    {% else %}
+        <form method="post">
+            <label>Forma de Pagamento:</label>
+            <select name="payment_method">
+                <option value="Cartão de Crédito">Cartão de Crédito</option>
+                <option value="PIX">PIX</option>
+                <option value="Boleto">Boleto</option>
+            </select>
+            <br><br>
+            <button type="submit">Pagar</button>
+        </form>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Voltar ao Início</a>
+</body>
+</html>

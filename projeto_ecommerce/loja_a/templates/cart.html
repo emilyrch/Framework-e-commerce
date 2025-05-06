@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item img {
+            width: 50px; /* Imagem pequena */
+            height: 50px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        .cart-item h3 {
+            margin: 0;
+        }
+        .total {
+            text-align: right;
+            font-size: 1.2em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .links a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carrinho de Compras</h1>
+
+    <div class="cart-container">
+        {% if items %}
+            <div class="cart-items">
+                {% for item in items %}
+                    <div class="cart-item">
+                        <img src="{{ url_for('static', filename=item.product.image_url) }}" alt="{{ item.product.name }}">
+                        <div class="product-info">
+                            <h3>{{ item.product.name }}</h3>
+                            <p>Quantidade: {{ item.quantity }}</p>
+                        </div>
+                        <div class="product-price">
+                            <p>R$ {{ item.product.price * item.quantity }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="total">
+                <p>Total: R$ {{ total }}</p>
+                <p>Frete: R$ {{ shipping_cost }}</p>  <!-- Exibe o valor do frete -->
+                <p><strong>Total + Frete: R$ {{ total + shipping_cost }}</strong></p>  <!-- Exibe o total com o frete incluso -->
+            </div>
+        {% else %}
+            <p>Seu carrinho está vazio.</p>
+        {% endif %}
+
+        <div class="links">
+            <a href="{{ url_for('do_checkout') }}">Finalizar Compra</a> |
+            <a href="{{ url_for('index') }}">Voltar ao Catálogo</a>
+        </div>
+    </div>
+</body>
+</html>
