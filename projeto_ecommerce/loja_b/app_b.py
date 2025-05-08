@@ -23,12 +23,12 @@ recommendation = Recommendation(catalog)
 
 
 # Adiciona produtos ao catálogo
-catalog.add_product(1, "MacBook Apple", 11.4500, "imagens/mac.png", weight=2.5)
-catalog.add_product(2, "Notebook Dell Inspiron 15", 3500.0, "imagens/notebook_dell_dois.png", weight=2.5)
-catalog.add_product(3, "Mouse Gamer", 150.0, "imagens/mouse.png", weight=2.5)
-catalog.add_product(4, "Monitor Samsung''", 800.0, "imagens/monitor.png", weight=2.5)
-catalog.add_product(5, "Notebook Gamer Avell Storm 350", 6500.0, "imagens/avell_storm.png", weight=2.5)
-catalog.add_product(6, "Kit Teclado Gamer", 6500.0, "imagens/kit_teclado.png", weight=2.5)
+catalog.add_product(1, "Vestido Florido", 30.00, "imagens/vestido_florido.jpg", weight=2.5)
+catalog.add_product(2, "Vestido Azul", 30.0, "imagens/vestido_azul.jpg", weight=2.5)
+catalog.add_product(3, "Vestido Branco", 35.0, "imagens/vestido_branco.jpg", weight=2.5)
+catalog.add_product(4, "Sapatilha", 40.0, "imagens/sapatilha.jpg", weight=2.5)
+catalog.add_product(5, "Jaqueta", 75.0, "imagens/jaqueta.jpg", weight=2.5)
+catalog.add_product(6, "Saia", 35.0, "imagens/saia.jpg", weight=2.5)
 
 @app.route("/")
 def index():
@@ -59,6 +59,7 @@ def do_checkout():
     
     return render_template("checkout.html")
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
 
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5001)

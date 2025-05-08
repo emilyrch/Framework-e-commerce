@@ -3,51 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Loja A - Catálogo de Eletrônicos">
-    <meta name="author" content="Loja A">
-    <meta name="keywords" content="eletrônicos, gadgets, tecnologia, compras online">
-    <title>Loja A - Catálogo de Eletrônicos</title>
+    <title>Brechó - Catálogo</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #121212;
-            color: #eaeaea;
+            font-family: Arial, sans-serif;
+            background-color: #FFC0CB;
             margin: 0;
             padding: 0;
         }
 
-        header {
-            background-color: #1f1f1f;
-            color: #00bcd4;
+        .cute-header {
+            background-color: #ffe6f0;
+            color: #d63384;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            border-bottom: 3px dashed #ffb6c1;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            margin: 0;
+        .cute-header h1 {
+            margin: 10px 0;
             font-size: 36px;
+            font-weight: bold;
             letter-spacing: 2px;
-            font-weight: 700;
         }
 
-        header i {
-            font-size: 40px;
-            margin-right: 10px;
+        .cute-header .flowers {
+            font-size: 24px;
+            line-height: 1;
         }
 
         h2 {
             text-align: center;
-            color: #00bcd4;
+            color: #2c3e50;
             margin-top: 30px;
-            font-size: 28px;
-            font-weight: 600;
         }
 
         .cart-icon {
@@ -55,16 +51,17 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            color: #eaeaea;
+            color: #2c3e50;
             cursor: pointer;
-            background-color: #00bcd4;
-            padding: 12px;
+            background-color: #ecf0f1;
+            padding: 10px;
             border-radius: 50%;
-            transition: background-color 0.3s;
+            transition: 0.3s;
+            z-index: 1100;
         }
 
         .cart-icon:hover {
-            background-color: #007c91;
+            background-color: #bdc3c7;
         }
 
         .products, .recommendations {
@@ -77,17 +74,16 @@
         }
 
         .product {
-            background-color: #2c2c2c;
-            border-radius: 12px;
+            background-color: #ffffff;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
             padding: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s;
         }
 
         .product:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
         }
 
         .product img {
@@ -100,47 +96,43 @@
         .product h3 {
             margin: 10px 0 5px;
             font-size: 18px;
-            color: #ffffff;
+            color: #34495e;
         }
 
         .product p {
             margin: 5px 0;
             font-size: 16px;
-            color: #00bcd4;
+            color: #27ae60;
         }
 
         .product a {
             display: inline-block;
-            margin-top: 15px;
-            background-color: #00bcd4;
+            margin-top: 10px;
+            background-color: #2980b9;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 15px;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 14px;
             transition: background-color 0.3s;
         }
 
         .product a:hover {
-            background-color: #007c91;
-        }
-
-        .recommendations .product {
-            background-color: #333;
+            background-color: #1c5980;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Header com nome da loja e ícone de tecnologia -->
-    <header>
-        <i class="fas fa-laptop-code"></i>
-        <h1>Loja - Eletrônicos</h1>
+    <!-- Header fofo com nome e florzinhas -->
+    <header class="cute-header">
+        <div class="flowers">🌸🌼🌸</div>
+        <h1>Brechó</h1>
+        <div class="flowers">🌼🌸🌼</div>
     </header>
 
-    <!-- Ícone do carrinho de compras -->
+    <!-- Ícone do carrinho -->
     <a href="{{ url_for('view_cart') }}">
         <i class="fas fa-shopping-cart cart-icon"></i>
     </a>
